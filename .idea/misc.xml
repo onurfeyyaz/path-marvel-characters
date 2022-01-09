@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/chars_list_adapter.xml" value="0.26671732522796354" />
         <entry key="app/src/main/res/layout/chars_list_fragment.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_char_detail.xml" value="0.26671732522796354" />
+        <entry key="app/src/main/res/menu/custom_detail_toolbar.xml" value="0.31875" />
       </map>
     </option>
   </component>

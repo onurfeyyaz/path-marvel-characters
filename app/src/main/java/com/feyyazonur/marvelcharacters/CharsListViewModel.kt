@@ -14,7 +14,6 @@ class CharsListViewModel constructor(private val repository: CharsRepository) : 
     val charsList: MutableLiveData<Model>
         get() = _charsList
 
-
     fun getCharacters() {
         val response = repository.getCharacters()
         response.enqueue(object : Callback<Model> {

@@ -1,7 +1,10 @@
 package com.feyyazonur.marvelcharacters.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Model(
     @SerializedName("code")
     var code: String?,
@@ -23,8 +26,9 @@ data class Model(
 
     @SerializedName("etag")
     var etag: String?
-)
+) : Parcelable
 
+@Parcelize
 data class Data(
     @SerializedName("offset")
     var offset: String?,
@@ -40,8 +44,9 @@ data class Data(
 
     @SerializedName("results")
     var results: List<Results>?
-)
+) : Parcelable
 
+@Parcelize
 data class Results(
     @SerializedName("id")
     var id: String?,
@@ -75,24 +80,27 @@ data class Results(
 
     @SerializedName("series")
     var series: Series?
-)
+) : Parcelable
 
+@Parcelize
 data class Urls(
     @SerializedName("type")
     var type: String?,
 
     @SerializedName("url")
     var url: String?
-)
+) : Parcelable
 
+@Parcelize
 data class Thumbnail(
     @SerializedName("path")
     var path: String?,
 
     @SerializedName("extension")
     var extension: String?
-)
+) : Parcelable
 
+@Parcelize
 data class Items(
     @SerializedName("resourceURI")
     var resourceURI: String?,
@@ -102,8 +110,9 @@ data class Items(
 
     @SerializedName("type")
     var type: String? = ""
-)
+) : Parcelable
 
+@Parcelize
 data class Comics(
     @SerializedName("available")
     var available: String?,
@@ -116,9 +125,9 @@ data class Comics(
 
     @SerializedName("items")
     var items: List<Items>?
-)
+) : Parcelable
 
-
+@Parcelize
 data class Stories(
     @SerializedName("available")
     var available: String?,
@@ -131,9 +140,9 @@ data class Stories(
 
     @SerializedName("items")
     var items: List<Items>?
-)
+) : Parcelable
 
-
+@Parcelize
 data class Events(
     @SerializedName("available")
     var available: String?,
@@ -146,9 +155,9 @@ data class Events(
 
     @SerializedName("items")
     var items: List<Items>?
-)
+) : Parcelable
 
-
+@Parcelize
 data class Series(
     @SerializedName("available")
     var available: String?,
@@ -161,4 +170,4 @@ data class Series(
 
     @SerializedName("items")
     var items: List<Items>?
-)
+) : Parcelable

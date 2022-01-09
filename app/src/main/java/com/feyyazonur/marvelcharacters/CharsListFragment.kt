@@ -43,8 +43,6 @@ class CharsListFragment : Fragment() {
             adapter.setCharsList(it)
         })
 
-
-
         viewModel.getCharacters()
 
         return binding.root

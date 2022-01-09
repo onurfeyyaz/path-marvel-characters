@@ -3,6 +3,7 @@ package com.feyyazonur.marvelcharacters
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.feyyazonur.marvelcharacters.databinding.CharPropBinding
@@ -26,19 +27,28 @@ class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
 
     override fun onBindViewHolder(holder: CharsListViewHolder, position: Int) {
         val char = model[position]
-        val charName = char.name
 
-        Log.d("CharsList", charName.toString())
-        holder.binding.heroName.text = charName
+        //Log.d("CharsList", "char name: : ${char.name}")
+        holder.binding.heroName.text = char.name
+
+        val imagePath = "${char.thumbnail!!.path}/portrait_small.${char.thumbnail!!.extension}"
+        Log.d("CharsList", imagePath)
 
         Glide.with(holder.itemView.context)
-            .load("http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_xlarge.jpg")
+            .load(imagePath) //"http://x.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_small.jpg")
             .into(holder.binding.heroImage)
+
+        holder.binding.listAdapterCardview.setOnClickListener {
+            Log.d("CharsList", "clicked char name: ${char.name}")
+            val action =
+                CharsListFragmentDirections.actionCharsListFragmentToCharDetailFragment(char)
+            holder.binding.listAdapterCardview.findNavController().navigate(action)
+        }
 
     }
 
     override fun getItemCount(): Int {
-        Log.d("CharsList", "model size: : : ${model.size}")
+        //Log.d("CharsList", "model size: : : ${model.size}")
         return model.size
     }
 }
