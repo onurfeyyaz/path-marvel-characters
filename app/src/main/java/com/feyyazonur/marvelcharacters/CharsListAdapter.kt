@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.feyyazonur.marvelcharacters.databinding.CharPropBinding
 import com.feyyazonur.marvelcharacters.model.Model
+import com.feyyazonur.marvelcharacters.model.Results
 
 class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
 
-    private var model = mutableListOf<Model>() // Results instead of Model
+    private var model = mutableListOf<Results>() // Results instead of Model
 
-    fun setCharsList(model: List<Model>) { // Results instead of Models
-        this.model = model.toMutableList()
+    fun setCharsList(model: Model) { // Results instead of Models
+        this.model = model.data!!.results!!.toMutableList()
         notifyDataSetChanged()
     }
 
@@ -25,10 +26,10 @@ class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
 
     override fun onBindViewHolder(holder: CharsListViewHolder, position: Int) {
         val char = model[position]
-        val charName = char.data
+        val charName = char.name
 
         Log.d("CharsList", charName.toString())
-        holder.binding.heroName.text = "charName"
+        holder.binding.heroName.text = charName
 
         Glide.with(holder.itemView.context)
             .load("http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_xlarge.jpg")
@@ -37,6 +38,7 @@ class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
     }
 
     override fun getItemCount(): Int {
+        Log.d("CharsList", "model size: : : ${model.size}")
         return model.size
     }
 }

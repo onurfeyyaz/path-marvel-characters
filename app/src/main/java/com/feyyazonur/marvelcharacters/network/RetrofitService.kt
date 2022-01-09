@@ -19,7 +19,7 @@ private const val AUTH_URL = "ts=$TIMESTAMP&apikey=$API_KEY&hash=$HASH"
 interface RetrofitService {
 
     @GET("characters?$AUTH_URL")
-    fun getCharacters(): Call<Model>
+    fun getCharacters(): Call<Model> // Call<Model> ile tüm model geliyor!
 
     companion object {
         var retrofitService: RetrofitService? = null
