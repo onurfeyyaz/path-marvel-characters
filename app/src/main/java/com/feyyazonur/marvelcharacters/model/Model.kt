@@ -1,81 +1,164 @@
 package com.feyyazonur.marvelcharacters.model
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class Model(
-    @SerializedName("code") var code: String? = null,
-    @SerializedName("status") var status: String? = null,
-    @SerializedName("copyright") var copyright: String? = null,
-    @SerializedName("attributionText") var attributionText: String? = null,
-    @SerializedName("attributionHTML") var attributionHTML: String? = null,
-    @SerializedName("data") var data: Data? = Data(),
-    @SerializedName("etag") var etag: String? = null
+    @SerializedName("code")
+    var code: String?,
+
+    @SerializedName("status")
+    var status: String?,
+
+    @SerializedName("copyright")
+    var copyright: String?,
+
+    @SerializedName("attributionText")
+    var attributionText: String?,
+
+    @SerializedName("attributionHTML")
+    var attributionHTML: String?,
+
+    @SerializedName("data")
+    var data: Data?,
+
+    @SerializedName("etag")
+    var etag: String?
 )
 
 data class Data(
-    @SerializedName("offset") var offset: String? = null,
-    @SerializedName("limit") var limit: String? = null,
-    @SerializedName("total") var total: String? = null,
-    @SerializedName("count") var count: String? = null,
-    @SerializedName("results") var results: ArrayList<Results> = arrayListOf()
+    @SerializedName("offset")
+    var offset: String?,
+
+    @SerializedName("limit")
+    var limit: String?,
+
+    @SerializedName("total")
+    var total: String?,
+
+    @SerializedName("count")
+    var count: String?,
+
+    @SerializedName("results")
+    var results: List<Results>?
 )
 
 data class Results(
-    @SerializedName("id") var id: String? = null,
-    @SerializedName("name") var name: String? = null,
-    @SerializedName("description") var description: String? = null,
-    @SerializedName("modified") var modified: String? = null,
-    @SerializedName("resourceURI") var resourceURI: String? = null,
-    @SerializedName("urls") var urls: ArrayList<Urls> = arrayListOf(),
-    @SerializedName("thumbnail") var thumbnail: Thumbnail? = Thumbnail(),
-    @SerializedName("comics") var comics: Comics? = Comics(),
-    @SerializedName("stories") var stories: Stories? = Stories(),
-    @SerializedName("events") var events: Events? = Events(),
-    @SerializedName("series") var series: Series? = Series()
+    @SerializedName("id")
+    var id: String?,
+
+    @SerializedName("name")
+    var name: String?,
+
+    @SerializedName("description")
+    var description: String?,
+
+    @SerializedName("modified")
+    var modified: String?,
+
+    @SerializedName("resourceURI")
+    var resourceURI: String?,
+
+    @SerializedName("urls")
+    var urls: List<Urls>?,
+
+    @SerializedName("thumbnail")
+    var thumbnail: Thumbnail?,
+
+    @SerializedName("comics")
+    var comics: Comics?,
+
+    @SerializedName("stories")
+    var stories: Stories?,
+
+    @SerializedName("events")
+    var events: Events?,
+
+    @SerializedName("series")
+    var series: Series?
 )
 
 data class Urls(
-    @SerializedName("type") var type: String? = null,
-    @SerializedName("url") var url: String? = null
+    @SerializedName("type")
+    var type: String?,
+
+    @SerializedName("url")
+    var url: String?
 )
 
 data class Thumbnail(
-    @SerializedName("path") var path: String? = null,
-    @SerializedName("extension") var extension: String? = null
+    @SerializedName("path")
+    var path: String?,
+
+    @SerializedName("extension")
+    var extension: String?
 )
 
 data class Items(
-    @SerializedName("resourceURI") var resourceURI: String? = null,
-    @SerializedName("name") var name: String? = null,
-    @SerializedName("type") var type: String = ""
+    @SerializedName("resourceURI")
+    var resourceURI: String?,
+
+    @SerializedName("name")
+    var name: String?,
+
+    @SerializedName("type")
+    var type: String? = ""
 )
 
 data class Comics(
-    @SerializedName("available") var available: String? = null,
-    @SerializedName("returned") var returned: String? = null,
-    @SerializedName("collectionURI") var collectionURI: String? = null,
-    @SerializedName("items") var items: ArrayList<Items> = arrayListOf()
+    @SerializedName("available")
+    var available: String?,
+
+    @SerializedName("returned")
+    var returned: String?,
+
+    @SerializedName("collectionURI")
+    var collectionURI: String?,
+
+    @SerializedName("items")
+    var items: List<Items>?
 )
+
 
 data class Stories(
-    @SerializedName("available") var available: String? = null,
-    @SerializedName("returned") var returned: String? = null,
-    @SerializedName("collectionURI") var collectionURI: String? = null,
-    @SerializedName("items") var items: ArrayList<Items> = arrayListOf()
+    @SerializedName("available")
+    var available: String?,
+
+    @SerializedName("returned")
+    var returned: String?,
+
+    @SerializedName("collectionURI")
+    var collectionURI: String?,
+
+    @SerializedName("items")
+    var items: List<Items>?
 )
+
 
 data class Events(
-    @SerializedName("available") var available: String? = null,
-    @SerializedName("returned") var returned: String? = null,
-    @SerializedName("collectionURI") var collectionURI: String? = null,
-    @SerializedName("items") var items: ArrayList<Items> = arrayListOf()
+    @SerializedName("available")
+    var available: String?,
+
+    @SerializedName("returned")
+    var returned: String?,
+
+    @SerializedName("collectionURI")
+    var collectionURI: String?,
+
+    @SerializedName("items")
+    var items: List<Items>?
 )
+
 
 data class Series(
-    @SerializedName("available") var available: String? = null,
-    @SerializedName("returned") var returned: String? = null,
-    @SerializedName("collectionURI") var collectionURI: String? = null,
-    @SerializedName("items") var items: ArrayList<Items> = arrayListOf()
-)
+    @SerializedName("available")
+    var available: String?,
 
+    @SerializedName("returned")
+    var returned: String?,
+
+    @SerializedName("collectionURI")
+    var collectionURI: String?,
+
+    @SerializedName("items")
+    var items: List<Items>?
+)
