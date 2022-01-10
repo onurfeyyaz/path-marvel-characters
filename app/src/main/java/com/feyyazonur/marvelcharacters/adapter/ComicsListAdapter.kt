@@ -3,7 +3,7 @@ package com.feyyazonur.marvelcharacters.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.feyyazonur.marvelcharacters.databinding.ComicItemBinding
+import com.feyyazonur.marvelcharacters.databinding.ComicsItemBinding
 import com.feyyazonur.marvelcharacters.model.Model
 import com.feyyazonur.marvelcharacters.model.Results
 
@@ -18,16 +18,16 @@ class ComicsListAdapter : RecyclerView.Adapter<ComicsListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComicsListViewHolder {
         val binding =
-            ComicItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ComicsItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ComicsListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ComicsListViewHolder, position: Int) {
-        val comic = model[position]
+        val comics = model[position]
 
-        // Log.d("CharsListDetail", "comic title: : ${comic.title}")
-        holder.binding.comicTitle.text = comic.title
-        holder.binding.comicDescription.text = comic.description
+        // Log.d("CharsListDetail", "comics title: : ${comics.title}")
+        holder.binding.comicsTitle.text = comics.title
+        holder.binding.comicsDescription.text = comics.description
 
     }
 
@@ -36,5 +36,5 @@ class ComicsListAdapter : RecyclerView.Adapter<ComicsListViewHolder>() {
     }
 }
 
-class ComicsListViewHolder(val binding: ComicItemBinding) :
+class ComicsListViewHolder(val binding: ComicsItemBinding) :
     RecyclerView.ViewHolder(binding.root)

@@ -74,7 +74,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hero_description_detail"
-                tools:listitem="@layout/comic_item" />
+                tools:listitem="@layout/comics_item" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

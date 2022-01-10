@@ -15,7 +15,7 @@ class CharsListViewModel constructor(private val CRepository: CRepository) : Vie
     val charsList: MutableLiveData<Model>
         get() = _charsList
 
-    private var _limit: Int = 10
+    private var _limit: Int = 30
     val limit: Int
         get() = _limit
 
@@ -41,7 +41,7 @@ class CharsListViewModel constructor(private val CRepository: CRepository) : Vie
     }
 
     fun limitUp() {
-        _charOffSet += 10
+        _charOffSet += 30
         getCharacters(_limit, _charOffSet)
     }
 }

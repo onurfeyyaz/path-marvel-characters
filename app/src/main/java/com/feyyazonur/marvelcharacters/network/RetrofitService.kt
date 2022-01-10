@@ -17,7 +17,7 @@ private const val AUTH_URL = "ts=$TIMESTAMP&apikey=$API_KEY&hash=$HASH"
 private const val CHARS_LIMIT = 3
 private const val COMICS_LIMIT = 10
 private const val DATE_RANGE = "2005-01-01%2C2022-12-12"
-private const val ORDER_BY = "onsaleDate"
+private const val ORDER_BY = "-onsaleDate"
 
 
 // about chars with parameters
