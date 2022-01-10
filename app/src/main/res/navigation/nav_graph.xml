@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/charDetailFragment"
-        android:name="com.feyyazonur.marvelcharacters.CharDetailFragment"
+        android:name="com.feyyazonur.marvelcharacters.ui.CharDetailFragment"
         android:label="CharDetailFragment" >
         <argument
             android:name="resultsArgument"
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/charsListFragment"
-        android:name="com.feyyazonur.marvelcharacters.CharsListFragment"
+        android:name="com.feyyazonur.marvelcharacters.ui.CharsListFragment"
         android:label="chars_list_fragment"
         tools:layout="@layout/chars_list_fragment" >
         <action

@@ -1,7 +1,8 @@
-package com.feyyazonur.marvelcharacters
+package com.feyyazonur.marvelcharacters.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.feyyazonur.marvelcharacters.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CharsListFragment">
+    tools:context=".ui.CharsListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chars_list_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/char_prop" />
+
 </FrameLayout>

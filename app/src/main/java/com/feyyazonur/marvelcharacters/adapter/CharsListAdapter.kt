@@ -1,6 +1,5 @@
-package com.feyyazonur.marvelcharacters
+package com.feyyazonur.marvelcharacters.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -9,12 +8,13 @@ import com.bumptech.glide.Glide
 import com.feyyazonur.marvelcharacters.databinding.CharPropBinding
 import com.feyyazonur.marvelcharacters.model.Model
 import com.feyyazonur.marvelcharacters.model.Results
+import com.feyyazonur.marvelcharacters.ui.CharsListFragmentDirections
 
 class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
 
-    private var model = mutableListOf<Results>() // Results instead of Model
+    private var model = mutableListOf<Results>()
 
-    fun setCharsList(model: Model) { // Results instead of Models
+    fun setCharsList(model: Model) {
         this.model = model.data!!.results!!.toMutableList()
         notifyDataSetChanged()
     }
@@ -28,18 +28,19 @@ class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
     override fun onBindViewHolder(holder: CharsListViewHolder, position: Int) {
         val char = model[position]
 
-        //Log.d("CharsList", "char name: : ${char.name}")
+        // Log.d("CharsList", "char name: : ${char.name}")
         holder.binding.heroName.text = char.name
 
         val imagePath = "${char.thumbnail!!.path}/portrait_small.${char.thumbnail!!.extension}"
-        Log.d("CharsList", imagePath)
+        // Log.d("CharsList", imagePath)
 
         Glide.with(holder.itemView.context)
             .load(imagePath) //"http://x.annihil.us/u/prod/marvel/i/mg/3/40/4bb4680432f73/portrait_small.jpg")
+            .circleCrop()
             .into(holder.binding.heroImage)
 
         holder.binding.listAdapterCardview.setOnClickListener {
-            Log.d("CharsList", "clicked char name: ${char.name}")
+            // Log.d("CharsList", "clicked char name: ${char.name}")
             val action =
                 CharsListFragmentDirections.actionCharsListFragmentToCharDetailFragment(char)
             holder.binding.listAdapterCardview.findNavController().navigate(action)
@@ -48,7 +49,7 @@ class CharsListAdapter : RecyclerView.Adapter<CharsListViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        //Log.d("CharsList", "model size: : : ${model.size}")
+        // Log.d("CharsList", "model size: : : ${model.size}")
         return model.size
     }
 }

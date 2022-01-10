@@ -49,10 +49,13 @@ data class Data(
 @Parcelize
 data class Results(
     @SerializedName("id")
-    var id: String?,
+    var id: Int?,
 
     @SerializedName("name")
     var name: String?,
+
+    @SerializedName("title")
+    var title: String?,
 
     @SerializedName("description")
     var description: String?,
